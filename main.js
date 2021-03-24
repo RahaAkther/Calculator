@@ -7,9 +7,14 @@ function calculate(button){
     var numbutton = ['%', '.', "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
     if(numbutton.indexOf(id) > -1 && !(screen.value.includes("%"))){
-        if(((screen.value[0] == "0" && screen.value[1] != ".") && id != ".") || sign.value == 'erase'){
+        if((screen.value[0] == "0" && screen.value[1] != ".") && id != "."){
             screen.value = "";
-            sign.value = ""
+            // sign.value = ""
+        }
+
+        if(sign.value == 'erase') {
+            screen.value = ""
+            sign.value = "";
         }
         
         if(screen.value.includes(".") && id != "."){
@@ -24,7 +29,8 @@ function calculate(button){
 
     if(id == "AC"){
         screen.value = "0";
-        temp.value = "0";
+        temp.value = "";
+        sign.value = ""
     }
 
     if(id == "C"){
@@ -36,15 +42,15 @@ function calculate(button){
     }
 
     if (id == "+" || id == "-" || id == "*" || id == "/"){
-        if(temp.value == ""){
-            temp.value = "0";
-        }
+        console.log("arithmetic button is working");
+        console.log(sign.value);
 
-        if (sign.value == ""){
+        if (sign.value == "" || sign.value == "erase"){
             temp.value = screen.value;
             
         } else {
             if(sign.value == "+"){
+                console.log("+ is working");
                 temp.value = parseFloat(temp.value) + parseFloat(screen.value);
             }
     
@@ -58,7 +64,7 @@ function calculate(button){
     
             if(sign.value == "/"){
                 if(screen.value == "0"){
-                    temp.value = parseFloat(temp.value)
+                    temp.value = 0
                 } else {
                     temp.value = parseFloat(temp.value) / parseFloat(screen.value);
                 }
@@ -66,6 +72,7 @@ function calculate(button){
         }
         screen.value = "0"
         sign.value = id;
+        console.log(sign.value)
     } 
     
 
