@@ -2,80 +2,87 @@
 background: #e0e0e0;
 box-shadow:  20px 20px 60px #bebebe,
              -20px -20px 60px #ffffff; */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: paleturquoise;
-}
-
-button {
-    height: 30px;
-    text-align: center;
-    color: paleturquoise;
-    background-color: black;
-    padding: auto;
-    font-weight: bold;
-    font-size: 15px;
-    border-radius: 5px;
-    border: none;
-    width: 100%;
-}
-
-.screen {
-    margin: 0 auto;
-    
-    height: 50px !important;
-    width: 85%;
- 
-
-    background-color: black;
-    
-}
-
-.screen #screen, .screen #temp {
-    padding: 5px 5px;
-    text-align: right;
-    width:  100%;
-    color: paleturquoise;
-    background-color: black;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-}
-
-.temp-display input {
-    border: none;
-    width: 50px;
-    color: paleturquoise;
-}
-
-.temp-display {
-    position: absolute !important;
-    top: 0px !important;
-    left: 0px !important;
-}
-table{ 
-    margin: 0px auto;
-    margin-top: 25px !important;
-}
-
-td {
-    width: 45px;
-    height: 35px;
-
-
-}
-
-.wraper{
-    padding-top: 20px;
-    width: 250px !important;
-    text-align: center;
-    margin: 0px auto;
-    background-color: grey;
-    height: 300px;
-    width: 300px;
-    margin-top: 40px;
-    box-shadow: 10px 10px 10px black;
-
-}
+             header h1 {
+                 background-color: black;
+                 colro: paleturquoise;
+                 padding: 10px 5px;
+                 text-align: center;
+             }
+             * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                color: paleturquoise;
+            }
+            
+            button {
+                height: 30px;
+                text-align: center;
+                color: paleturquoise;
+                background-color: black;
+                padding: auto;
+                font-weight: bold;
+                font-size: 15px;
+                border-radius: 5px;
+                border: none;
+                width: 100%;
+            }
+            
+            .screen {
+                margin: 0 auto;
+                
+                height: 50px !important;
+                width: 85%;
+             
+            
+                background-color: black;
+                
+            }
+            
+            .screen #screen, .screen #temp {
+                padding: 5px 5px;
+                text-align: right;
+                width:  100%;
+                color: paleturquoise;
+                background-color: black;
+                font-size: 16px;
+                font-weight: bold;
+                border: none;
+            }
+            
+            .temp-display input {
+                display: none;
+                border: none;
+                width: 50px;
+                color: paleturquoise;
+            }
+            
+            .temp-display {
+                position: absolute !important;
+                top: 0px !important;
+                left: 0px !important;
+            }
+            table{ 
+                margin: 0px auto;
+                margin-top: 25px !important;
+            }
+            
+            td {
+                width: 45px;
+                height: 35px;
+            
+            
+            }
+            
+            .wraper{
+                padding-top: 20px;
+                width: 250px !important;
+                text-align: center;
+                margin: 0px auto;
+                background-color: grey;
+                height: 300px;
+                width: 300px;
+                margin-top: 40px;
+                box-shadow: 10px 10px 10px black;
+            
+            }
