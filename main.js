@@ -22,6 +22,9 @@ function calculate(button){
         }
 
         if(!screen.value.includes(".")){
+            if((id == "." || id == "%") && (screen.value == "" || screen.value == "0")){
+                screen.value = "0";
+            }
             screen.value += id;
         }
 
@@ -42,15 +45,21 @@ function calculate(button){
     }
 
     if (id == "+" || id == "-" || id == "*" || id == "/"){
-        console.log("arithmetic button is working");
-        console.log(sign.value);
+        if(screen.value.includes("%")){
+            screen.value = screen.value.slice(0, -1);
+            screen.value = parseFloat(screen.value) / 100;
+        }
+        
+        if(temp.value.includes("%")){
+            temp.value = temp.value.slice(0, -1);
+            temp.value = parseFloat(temp.value) / 100;
+        }
 
         if (sign.value == "" || sign.value == "erase"){
             temp.value = screen.value;
             
         } else {
             if(sign.value == "+"){
-                console.log("+ is working");
                 temp.value = parseFloat(temp.value) + parseFloat(screen.value);
             }
     
@@ -72,7 +81,6 @@ function calculate(button){
         }
         screen.value = "0"
         sign.value = id;
-        console.log(sign.value)
     } 
     
 
@@ -80,7 +88,10 @@ function calculate(button){
         if(screen.value.includes("%")){
             screen.value = screen.value.slice(0, -1);
             screen.value = parseFloat(screen.value) / 100;
-            console.log(screen.value);
+        }
+        if(temp.value.includes("%")){
+            temp.value = temp.value.slice(0, -1);
+            temp.value = parseFloat(temp.value) / 100;
         }
 
         if(sign.value == "+"){
@@ -96,12 +107,10 @@ function calculate(button){
         }
 
         if(sign.value == "/"){
-            console.log(screen.value);
             if(screen.value == "0"){
                 total = 0;
             } else {
                 total = parseFloat(temp.value) / parseFloat(screen.value);
-                console.log(total);
             }
             
         }
